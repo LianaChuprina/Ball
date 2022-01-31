@@ -16,8 +16,8 @@ extension TabBarVC {
         embedTabBarVC.viewControllers = [instantiateMostMainVC(), instantiateMostSettingsVC()]
         
         embedTabBarVC.tabBar.barTintColor = .white
-        embedTabBarVC.tabBar.unselectedItemTintColor = .black
-        embedTabBarVC.tabBar.tintColor = .brown
+        embedTabBarVC.tabBar.unselectedItemTintColor = .systemOrange
+        embedTabBarVC.tabBar.tintColor = .systemRed
         self.navigationController?.isNavigationBarHidden = true
         addChildViewControllerToView(embedTabBarVC,
                                      toContainer: view)
@@ -26,7 +26,7 @@ extension TabBarVC {
         let viewController = MainVC(presenter: MainPresenter(model: MainModel())) ?? UIViewController()
         let navigationVC = UINavigationController(rootViewController: viewController)
         viewController.tabBarItem = UITabBarItem(
-            title: "main",
+            title: " ",
             image: UIImage(named: "mainImage"),
             selectedImage: UIImage(named: "mainImage")
         )
@@ -36,7 +36,7 @@ extension TabBarVC {
         let viewController = SettingsVC(presenter: SettingsPresenter(model: SettingsModel())) ?? UIViewController()
         let navigationVC = UINavigationController(rootViewController: viewController)
         viewController.tabBarItem = UITabBarItem(
-            title: "settings",
+            title: " ",
             image: UIImage(named: "settingsImage"),
             selectedImage: UIImage(named: "settingsImage")
         )

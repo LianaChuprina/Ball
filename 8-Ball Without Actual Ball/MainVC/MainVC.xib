@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -10,6 +10,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainVC" customModule="__Ball_Without_Actual_Ball" customModuleProvider="target">
             <connections>
+                <outlet property="informationLabel" destination="GeJ-tO-9Jt" id="oGe-7G-jJX"/>
+                <outlet property="questionTextView" destination="xYg-v5-AVp" id="EPM-bQ-Shc"/>
+                <outlet property="tableView" destination="Ljh-BQ-4Nu" id="alN-mX-VKW"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,14 +20,78 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Answer Ball" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r2t-EB-Ntp">
+                    <rect key="frame" x="20" y="94" width="374" height="37"/>
+                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="31"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Question" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aac-BU-K23">
+                    <rect key="frame" x="40" y="231" width="334" height="21"/>
+                    <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </label>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="xYg-v5-AVp">
+                    <rect key="frame" x="20" y="260" width="374" height="60"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="7Pe-ZM-3Gr"/>
+                    </constraints>
+                    <color key="textColor" systemColor="labelColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="cell" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Ljh-BQ-4Nu">
+                    <rect key="frame" x="20" y="430.5" width="374" height="391.5"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Answer" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GeJ-tO-9Jt">
+                    <rect key="frame" x="50" y="370" width="314" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="boll" translatesAutoresizingMaskIntoConstraints="NO" id="Lwg-he-SiW">
+                    <rect key="frame" x="142" y="132" width="131" height="97"/>
+                </imageView>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" systemColor="systemPinkColor"/>
-            <point key="canvasLocation" x="139" y="139"/>
+            <color key="backgroundColor" red="0.58080808080808088" green="0.38754063021639229" blue="0.53249121816015876" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <constraints>
+                <constraint firstItem="r2t-EB-Ntp" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="0Ve-84-utY"/>
+                <constraint firstItem="Ljh-BQ-4Nu" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="5q1-dg-ATt"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Ljh-BQ-4Nu" secondAttribute="trailing" constant="20" id="8lq-aJ-oBQ"/>
+                <constraint firstItem="aac-BU-K23" firstAttribute="top" secondItem="Lwg-he-SiW" secondAttribute="bottom" constant="2" id="ACk-yh-HXG"/>
+                <constraint firstItem="aac-BU-K23" firstAttribute="top" secondItem="r2t-EB-Ntp" secondAttribute="bottom" constant="100" id="CUc-6k-j6P"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Lwg-he-SiW" secondAttribute="trailing" constant="141" id="DBx-mL-Wvu"/>
+                <constraint firstItem="r2t-EB-Ntp" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="50" id="DSs-S9-XIf"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="xYg-v5-AVp" secondAttribute="trailing" constant="20" id="Dym-eB-CK8"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Ljh-BQ-4Nu" secondAttribute="bottom" constant="40" id="MTF-CD-ALd"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="r2t-EB-Ntp" secondAttribute="trailing" constant="20" id="T6B-EL-uJh"/>
+                <constraint firstItem="GeJ-tO-9Jt" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Tjv-Ah-T01"/>
+                <constraint firstItem="Lwg-he-SiW" firstAttribute="top" secondItem="r2t-EB-Ntp" secondAttribute="bottom" constant="1" id="XKP-md-xeA"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="aac-BU-K23" secondAttribute="trailing" constant="40" id="YvD-GJ-Mx0"/>
+                <constraint firstItem="aac-BU-K23" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="40" id="iUR-Dq-zmY"/>
+                <constraint firstItem="GeJ-tO-9Jt" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="50" id="joS-lL-Peu"/>
+                <constraint firstItem="GeJ-tO-9Jt" firstAttribute="top" secondItem="xYg-v5-AVp" secondAttribute="bottom" constant="50" id="jtY-6r-JSy"/>
+                <constraint firstItem="Lwg-he-SiW" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="142" id="kZe-bh-LcW"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="GeJ-tO-9Jt" secondAttribute="trailing" constant="50" id="knd-oa-sng"/>
+                <constraint firstItem="xYg-v5-AVp" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="sXh-JK-HJN"/>
+                <constraint firstItem="Ljh-BQ-4Nu" firstAttribute="top" secondItem="GeJ-tO-9Jt" secondAttribute="bottom" constant="40" id="xkE-zg-DP8"/>
+                <constraint firstItem="xYg-v5-AVp" firstAttribute="top" secondItem="aac-BU-K23" secondAttribute="bottom" constant="8" symbolic="YES" id="yVM-QU-W2f"/>
+            </constraints>
+            <point key="canvasLocation" x="137.68115942028987" y="138.61607142857142"/>
         </view>
     </objects>
     <resources>
-        <systemColor name="systemPinkColor">
-            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <image name="boll" width="512" height="512"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0603EC0B1A24FF6436523989 /* libPods-8-Ball Without Actual Ball.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 54C2653D917907A41CEB2116 /* libPods-8-Ball Without Actual Ball.a */; };
+		86DF7DCE27A49240008DC47F /* ModelAnswerOnQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DF7DCD27A49240008DC47F /* ModelAnswerOnQuestion.swift */; };
 		D1B259A227933F8E00D4359A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B259A127933F8E00D4359A /* AppDelegate.swift */; };
 		D1B259A427933F8E00D4359A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B259A327933F8E00D4359A /* SceneDelegate.swift */; };
 		D1B259AB27933F9000D4359A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1B259AA27933F9000D4359A /* Assets.xcassets */; };
@@ -20,9 +22,17 @@
 		D1B259C62793503900D4359A /* SettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B259C52793503900D4359A /* SettingsPresenter.swift */; };
 		D1B259C82793505300D4359A /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B259C72793505300D4359A /* SettingsModel.swift */; };
 		D1B259CC2793513700D4359A /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B259CB2793513700D4359A /* TabBarVC.swift */; };
+		D1E859D427A5724900B8EB5D /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E859D227A5724900B8EB5D /* MainTableViewCell.swift */; };
+		D1E859D527A5724900B8EB5D /* MainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1E859D327A5724900B8EB5D /* MainTableViewCell.xib */; };
+		D1E859D727A5728500B8EB5D /* MainTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E859D627A5728500B8EB5D /* MainTableViewModel.swift */; };
+		D1E859E727A81A8E00B8EB5D /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E859E527A81A8E00B8EB5D /* SettingsTableViewCell.swift */; };
+		D1E859E827A81A8E00B8EB5D /* SettingsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1E859E627A81A8E00B8EB5D /* SettingsTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		49016D908BBF3EA1F0AC18E2 /* Pods-8-Ball Without Actual Ball.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-8-Ball Without Actual Ball.debug.xcconfig"; path = "Target Support Files/Pods-8-Ball Without Actual Ball/Pods-8-Ball Without Actual Ball.debug.xcconfig"; sourceTree = "<group>"; };
+		54C2653D917907A41CEB2116 /* libPods-8-Ball Without Actual Ball.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-8-Ball Without Actual Ball.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		86DF7DCD27A49240008DC47F /* ModelAnswerOnQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelAnswerOnQuestion.swift; sourceTree = "<group>"; };
 		D1B2599E27933F8E00D4359A /* 8-Ball Without Actual Ball.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "8-Ball Without Actual Ball.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1B259A127933F8E00D4359A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D1B259A327933F8E00D4359A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -38,6 +48,12 @@
 		D1B259C52793503900D4359A /* SettingsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPresenter.swift; sourceTree = "<group>"; };
 		D1B259C72793505300D4359A /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
 		D1B259CB2793513700D4359A /* TabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
+		D1E859D227A5724900B8EB5D /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
+		D1E859D327A5724900B8EB5D /* MainTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainTableViewCell.xib; sourceTree = "<group>"; };
+		D1E859D627A5728500B8EB5D /* MainTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewModel.swift; sourceTree = "<group>"; };
+		D1E859E527A81A8E00B8EB5D /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
+		D1E859E627A81A8E00B8EB5D /* SettingsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsTableViewCell.xib; sourceTree = "<group>"; };
+		F38CB6E1ED69052C478132E3 /* Pods-8-Ball Without Actual Ball.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-8-Ball Without Actual Ball.release.xcconfig"; path = "Target Support Files/Pods-8-Ball Without Actual Ball/Pods-8-Ball Without Actual Ball.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,17 +61,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0603EC0B1A24FF6436523989 /* libPods-8-Ball Without Actual Ball.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7155994952A11A3569BF6508 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				54C2653D917907A41CEB2116 /* libPods-8-Ball Without Actual Ball.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A06FDC7200155134084F9FED /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				49016D908BBF3EA1F0AC18E2 /* Pods-8-Ball Without Actual Ball.debug.xcconfig */,
+				F38CB6E1ED69052C478132E3 /* Pods-8-Ball Without Actual Ball.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		D1B2599527933F8E00D4359A = {
 			isa = PBXGroup;
 			children = (
 				D1B259A027933F8E00D4359A /* 8-Ball Without Actual Ball */,
 				D1B2599F27933F8E00D4359A /* Products */,
+				A06FDC7200155134084F9FED /* Pods */,
+				7155994952A11A3569BF6508 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -75,6 +111,7 @@
 				D1B259BB2793406600D4359A /* Support */,
 				D1B259BA2793404D00D4359A /* MainVC */,
 				D1B259C427934F2C00D4359A /* SettingsVC */,
+				86DF7DCD27A49240008DC47F /* ModelAnswerOnQuestion.swift */,
 			);
 			path = "8-Ball Without Actual Ball";
 			sourceTree = "<group>";
@@ -86,6 +123,7 @@
 				D1B259BC2793457D00D4359A /* MainPresenter.swift */,
 				D1B259B52793402000D4359A /* MainVC.swift */,
 				D1B259B62793402100D4359A /* MainVC.xib */,
+				D1E859D127A571DE00B8EB5D /* MainTableViewCell */,
 			);
 			path = MainVC;
 			sourceTree = "<group>";
@@ -108,6 +146,7 @@
 				D1B259C52793503900D4359A /* SettingsPresenter.swift */,
 				D1B259C027934F2200D4359A /* SettingsVC.swift */,
 				D1B259C127934F2200D4359A /* SettingsVC.xib */,
+				D1E859E427A81A5F00B8EB5D /* MainTableViewCell */,
 			);
 			path = SettingsVC;
 			sourceTree = "<group>";
@@ -120,6 +159,25 @@
 			path = TabBarVC;
 			sourceTree = "<group>";
 		};
+		D1E859D127A571DE00B8EB5D /* MainTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				D1E859D627A5728500B8EB5D /* MainTableViewModel.swift */,
+				D1E859D227A5724900B8EB5D /* MainTableViewCell.swift */,
+				D1E859D327A5724900B8EB5D /* MainTableViewCell.xib */,
+			);
+			path = MainTableViewCell;
+			sourceTree = "<group>";
+		};
+		D1E859E427A81A5F00B8EB5D /* MainTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				D1E859E527A81A8E00B8EB5D /* SettingsTableViewCell.swift */,
+				D1E859E627A81A8E00B8EB5D /* SettingsTableViewCell.xib */,
+			);
+			path = MainTableViewCell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -127,6 +185,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D1B259B227933F9000D4359A /* Build configuration list for PBXNativeTarget "8-Ball Without Actual Ball" */;
 			buildPhases = (
+				2C3239D889BEB1FF915B60ED /* [CP] Check Pods Manifest.lock */,
 				D1B2599A27933F8E00D4359A /* Sources */,
 				D1B2599B27933F8E00D4359A /* Frameworks */,
 				D1B2599C27933F8E00D4359A /* Resources */,
@@ -178,26 +237,57 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1E859E827A81A8E00B8EB5D /* SettingsTableViewCell.xib in Resources */,
 				D1B259B82793402100D4359A /* MainVC.xib in Resources */,
 				D1B259C327934F2200D4359A /* SettingsVC.xib in Resources */,
 				D1B259AE27933F9000D4359A /* LaunchScreen.storyboard in Resources */,
 				D1B259AB27933F9000D4359A /* Assets.xcassets in Resources */,
+				D1E859D527A5724900B8EB5D /* MainTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2C3239D889BEB1FF915B60ED /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-8-Ball Without Actual Ball-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D1B2599A27933F8E00D4359A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1E859D427A5724900B8EB5D /* MainTableViewCell.swift in Sources */,
 				D1B259C82793505300D4359A /* SettingsModel.swift in Sources */,
 				D1B259A227933F8E00D4359A /* AppDelegate.swift in Sources */,
 				D1B259B72793402100D4359A /* MainVC.swift in Sources */,
+				D1E859D727A5728500B8EB5D /* MainTableViewModel.swift in Sources */,
+				D1E859E727A81A8E00B8EB5D /* SettingsTableViewCell.swift in Sources */,
 				D1B259A427933F8E00D4359A /* SceneDelegate.swift in Sources */,
 				D1B259CC2793513700D4359A /* TabBarVC.swift in Sources */,
 				D1B259BF2793458E00D4359A /* MainModel.swift in Sources */,
+				86DF7DCE27A49240008DC47F /* ModelAnswerOnQuestion.swift in Sources */,
 				D1B259BD2793457D00D4359A /* MainPresenter.swift in Sources */,
 				D1B259C227934F2200D4359A /* SettingsVC.swift in Sources */,
 				D1B259C62793503900D4359A /* SettingsPresenter.swift in Sources */,
@@ -336,6 +426,7 @@
 		};
 		D1B259B327933F9000D4359A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 49016D908BBF3EA1F0AC18E2 /* Pods-8-Ball Without Actual Ball.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -363,6 +454,7 @@
 		};
 		D1B259B427933F9000D4359A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F38CB6E1ED69052C478132E3 /* Pods-8-Ball Without Actual Ball.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
