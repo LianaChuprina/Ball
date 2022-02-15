@@ -3,14 +3,15 @@ import UIKit
 class SettingsVC: UIViewController {
     @IBOutlet private var tableView: UITableView!
     @IBOutlet private var addAnswerButton: UIButton!
-    var presenter: SettingsPresenter?
     
+    var presenter: SettingsPresenter?
     private var saveAnswer: [String] {
         return UserDefaults.standard.object(forKey:"savedAnswer") as? [String] ?? [String]()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         tableView.dataSource = self
         let cellNib = UINib(nibName: "SettingsTableViewCell", bundle: nil)
         tableView.register(cellNib, forCellReuseIdentifier: "cellSettings")
