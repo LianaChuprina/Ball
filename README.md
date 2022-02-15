@@ -1,1 +1,0 @@
-Ball - Project for Yalantis
