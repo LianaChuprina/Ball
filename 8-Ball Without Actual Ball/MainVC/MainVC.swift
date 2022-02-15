@@ -134,16 +134,16 @@ extension MainVC: UITableViewDataSource {
     }
 }
 
-    struct SaveAnswer {
+struct SaveAnswer {
     let answer: Answer
     let date: Date
-    }
+}
 
-    enum StateInformation {
+enum StateInformation {
     case `default`
     case inputText
     case getAnswer(answer: String)
     case expectAnswer
     case needShake
     case noOnlyLetters
-    }
+}
