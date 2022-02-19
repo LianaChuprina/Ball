@@ -6,6 +6,7 @@ final class MainPresenter {
     var saveAnswers: [String] {
         return UserDefaults.standard.object(forKey:"savedAnswer") as? [String] ?? [String]()
     }
+    var answerOnQuestions = [SaveAnswer]()
     
     init(model: MainModel) {
         self.model = model
