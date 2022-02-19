@@ -4,7 +4,8 @@ final class MainVC: UIViewController {
     @IBOutlet private var questionTextView: UITextView!
     @IBOutlet private var tableView: UITableView!
     @IBOutlet private var informationLabel: UILabel!
-    private var answerOnQuestion = [SaveAnswer]()
+    // move to presenter 
+    private var answerOnQuestions = [SaveAnswer]()
     
     var presenter: MainPresenter?
     var timer: Timer?
@@ -58,7 +59,7 @@ final class MainVC: UIViewController {
     }
     
     override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
-        switchStateInformationLabel(.getAnswer(answer: answerOnQuestion.last?.answer.answer ?? ""))
+        switchStateInformationLabel(.getAnswer(answer: answerOnQuestions.last?.answer.answer ?? ""))
         tableView.reloadData()
     }
 }
@@ -71,12 +72,13 @@ extension MainVC: UITextViewDelegate {
         }
         
         switchStateInformationLabel(.inputText)
+        // если пользователь ничего не вводит половину секунды мы отправляем запрос на сервер
         debounce(seconds: 0.5) {
             self.switchStateInformationLabel(.expectAnswer)
             if let check = self.containsOnlyLetters(input: textView.text) {
                 if check {
-                    self.presenter?.getAnswerOnQuestion(question: textView.text, compl: { answer in
-                        self.answerOnQuestion.append(SaveAnswer(answer: answer, date: Date()))
+                    self.presenter?.getAnswerOnQuestion(question: textView.text, completed: { answer in
+                        self.answerOnQuestions.append(SaveAnswer(answer: answer, date: Date()))
                         self.switchStateInformationLabel(.needShake)
                     })
                 } else {
@@ -117,9 +119,9 @@ extension MainVC: UITableViewDataSource {
                                                        for: indexPath) as? MainTableViewCell else { return UITableViewCell() }
         
         let model = MainTableViewModel(
-            question: answerOnQuestion.reversed()[indexPath.row].answer.question,
-            answer: answerOnQuestion.reversed()[indexPath.row].answer.answer,
-            time:answerOnQuestion.reversed()[indexPath.row].date.description
+            question: answerOnQuestions.reversed()[indexPath.row].answer.question,
+            answer: answerOnQuestions.reversed()[indexPath.row].answer.answer,
+            time:answerOnQuestions.reversed()[indexPath.row].date.description
         )
         
         cell.render(
@@ -130,7 +132,7 @@ extension MainVC: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        answerOnQuestion.count
+        answerOnQuestions.count
     }
 }
 

@@ -1,10 +1,10 @@
 import UIKit
 
-class SettingsTableViewCell: UITableViewCell {
+final class SettingsTableViewCell: UITableViewCell {
     @IBOutlet private var textAnswer: UITextField!
     
     private var structure: SettingsTableViewCellModel?
-    var saveAnswer: [String] {
+    private var saveAnswer: [String] {
         return UserDefaults.standard.object(forKey:"savedAnswer") as? [String] ?? [String]()
     }
     
@@ -14,12 +14,12 @@ class SettingsTableViewCell: UITableViewCell {
         setup()
     }
     
-    func render(structure: SettingsTableViewCellModel) {
+    public func render(structure: SettingsTableViewCellModel) {
         self.structure = structure
         textAnswer.text = structure.text
     }
     
-    @IBAction func textChanged(_ sender: UITextField) {
+    @IBAction private func textChanged(_ sender: UITextField) {
         if let structure = structure {
             var currentAnswer = saveAnswer
             currentAnswer[structure.id] = sender.text ?? "Defolt"
