@@ -3,7 +3,7 @@ import Foundation
 final class SettingsPresenter {
     let model: SettingsModel
     
-    public var saveAnswer: [String] {
+    var saveAnswer: [String] {
         return UserDefaults.standard.object(forKey:"savedAnswer") as? [String] ?? [String]()
     }
     
@@ -12,14 +12,14 @@ final class SettingsPresenter {
     }
     
     
-    public func addNewAnswer(completed: @escaping (() -> Void)) {
+     func addNewAnswer(completion: @escaping (() -> Void)) {
         var currentAnswer = saveAnswer
         currentAnswer.append("Defolt")
         UserDefaults.standard.set(currentAnswer, forKey: "savedAnswer")
-        completed()
+        completion()
     }
     
-    public func removeAnswer(complited: @escaping (() -> Void), index: Int) {
+     func removeAnswer(complited: @escaping (() -> Void), index: Int) {
         var currentAnswer = saveAnswer
         currentAnswer.remove(at: index)
         UserDefaults.standard.set(currentAnswer, forKey: "savedAnswer")

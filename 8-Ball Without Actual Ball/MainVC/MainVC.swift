@@ -80,19 +80,19 @@ extension MainVC: UITextViewDelegate {
         
         switchStateInformationLabel(.inputText)
         // если пользователь ничего не вводит половину секунды мы отправляем запрос на сервер
-        debounce(seconds: 0.5) {
-            self.switchStateInformationLabel(.expectAnswer)
-            if let check = self.containsOnlyLetters(input: textView.text) {
+        debounce(seconds: 0.5) { [weak self] in
+            self?.switchStateInformationLabel(.expectAnswer)
+            if let check = self?.containsOnlyLetters(input: textView.text) {
                 if check {
-                    self.presenter?.getAnswerOnQuestion(question: textView.text, completed: { answer in
-                        self.presenter?.answerOnQuestions.append(SaveAnswer(answer: answer, date: Date()))
-                        self.switchStateInformationLabel(.needShake)
+                    self?.presenter?.getAnswerOnQuestion(question: textView.text, completionHandler: { answer in
+                        self?.presenter?.answerOnQuestions.append(SaveAnswer(answer: answer, date: Date()))
+                        self?.switchStateInformationLabel(.needShake)
                     })
                 } else {
-                    self.switchStateInformationLabel(.noOnlyLetters)
+                    self?.switchStateInformationLabel(.noOnlyLetters)
                 }
             } else {
-                self.switchStateInformationLabel(.default)
+                self?.switchStateInformationLabel(.default)
             }
         }
     }
