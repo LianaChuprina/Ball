@@ -36,7 +36,11 @@ extension SettingsVC: UITableViewDataSource {
                                                        for: indexPath) as? SettingsTableViewCell else { return UITableViewCell() }
         
         cell.render(
-            structure: SettingsTableViewCellModel(text: presenter?.saveAnswer[indexPath.row] ?? "error", id: indexPath.row )
+            structure: SettingsTableViewCellModel(text: presenter?.saveAnswer[indexPath.row] ?? "error",
+                                                  id: indexPath.row ), block: { [weak self] id, text in
+                                                      self?.presenter?.changeAnswer(index: id,
+                                                                                    text: text)
+                                                  }
         )
         
         return cell
