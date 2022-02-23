@@ -1,13 +1,10 @@
 import UIKit
 
-class SettingsVC: UIViewController {
+final class SettingsVC: UIViewController {
     @IBOutlet private var tableView: UITableView!
     @IBOutlet private var addAnswerButton: UIButton!
     
-    var presenter: SettingsPresenter?
-    private var saveAnswer: [String] {
-        return UserDefaults.standard.object(forKey:"savedAnswer") as? [String] ?? [String]()
-    }
+    private var presenter: SettingsPresenter?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,41 +24,44 @@ class SettingsVC: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // Реагируем на нажатие кнопки "добавить"
     @IBAction private func tapAddAnswer(_ sender: UIButton) {
-        var currentAnswer = saveAnswer
-        currentAnswer.append("Defolt")
-        UserDefaults.standard.set(currentAnswer, forKey: "savedAnswer")
-        tableView.reloadData()
+        presenter?.addNewAnswer { self.tableView.reloadData() }
     }
-    
 }
+
 extension SettingsVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "cellSettings",
                                                        for: indexPath) as? SettingsTableViewCell else { return UITableViewCell() }
         
         cell.render(
-            structure: SettingsTableViewCellModel(text: saveAnswer[indexPath.row], id: indexPath.row )
+            structure: SettingsTableViewCellModel(text: presenter?.saveAnswer[indexPath.row] ?? "error",
+                                                  id: indexPath.row ), block: { [weak self] id, text in
+                                                      self?.presenter?.changeAnswer(index: id,
+                                                                                    text: text)
+                                                  }
         )
         
         return cell
     }
     
     private func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        return true
+        true
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView,
+                   commit editingStyle: UITableViewCell.EditingStyle,
+                   forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            var currentAnswer = saveAnswer
-            currentAnswer.remove(at: indexPath.row)
-            UserDefaults.standard.set(currentAnswer, forKey: "savedAnswer")
-            tableView.reloadData()
+            presenter?.removeAnswer(complited: {
+                tableView.reloadData()
+            }, index: indexPath.row)
         }
     }
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        saveAnswer.count
+        presenter?.saveAnswer.count ?? 0
     }
 }

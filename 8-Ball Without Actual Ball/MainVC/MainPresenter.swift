@@ -1,31 +1,41 @@
 import Foundation
 import Alamofire
 
-class MainPresenter {
+final class MainPresenter {
     let model: MainModel
-    var saveAnswer: [String] {
+    var saveAnswers: [String] {
         return UserDefaults.standard.object(forKey:"savedAnswer") as? [String] ?? [String]()
     }
+    var answerOnQuestions = [SaveAnswer]()
     
     init(model: MainModel) {
         self.model = model
     }
     
-    func getAnswerOnQuestion(question: String, compl: @escaping (Answer) -> Void) {
+    // Отправляем вопрос пользователя в виде строки в теле запроса
+    // Получаем параметры
+    // question: String - вопрос пользователя
+    // answer: String - ответ на вопрос пользователя
+    // type: String - тип вопроса пользователя
+    
+    func getAnswerOnQuestion(question: String, completionHandler: @escaping (Answer) -> Void) {
         AF.request("https://8ball.delegator.com/magic/JSON/\(question)").responseDecodable(of: ModelAnswerOnQuestion.self) { response in
             switch response.result {
             case .success(_):
                 guard let answer = response.value else { return }
                 
-                compl(answer.magic)
+                completionHandler(answer.magic)
                 
             case .failure(let encodingError):
                 switch encodingError {
                 case .sessionTaskFailed(_):
-                    if !self.saveAnswer.isEmpty {
-                        compl(Answer(question: question, answer: self.saveAnswer[Int.random(in: 0...self.saveAnswer.count - 1)], type: ""))
+                    if !self.saveAnswers.isEmpty {
+                        completionHandler(Answer(question: question,
+                                         answer: self.saveAnswers[Int.random(in: 0...self.saveAnswers.count - 1)],
+                                         type: ""))
                     } else {
-                        compl(Answer(question: question, answer: "qwertyuiop", type: ""))
+                        // при отсутствии интернета и локально сохраненных запрограмированных ответов
+                        completionHandler(Answer(question: question, answer: "Mabe", type: ""))
                     }
                     
                 default:

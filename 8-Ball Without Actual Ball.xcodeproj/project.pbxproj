@@ -22,6 +22,7 @@
 		D1B259C62793503900D4359A /* SettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B259C52793503900D4359A /* SettingsPresenter.swift */; };
 		D1B259C82793505300D4359A /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B259C72793505300D4359A /* SettingsModel.swift */; };
 		D1B259CC2793513700D4359A /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B259CB2793513700D4359A /* TabBarVC.swift */; };
+		D1C0813027C11B4B0000FC54 /* SaveAnswer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C0812F27C11B4B0000FC54 /* SaveAnswer.swift */; };
 		D1E859D427A5724900B8EB5D /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E859D227A5724900B8EB5D /* MainTableViewCell.swift */; };
 		D1E859D527A5724900B8EB5D /* MainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1E859D327A5724900B8EB5D /* MainTableViewCell.xib */; };
 		D1E859D727A5728500B8EB5D /* MainTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E859D627A5728500B8EB5D /* MainTableViewModel.swift */; };
@@ -48,6 +49,7 @@
 		D1B259C52793503900D4359A /* SettingsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPresenter.swift; sourceTree = "<group>"; };
 		D1B259C72793505300D4359A /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
 		D1B259CB2793513700D4359A /* TabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
+		D1C0812F27C11B4B0000FC54 /* SaveAnswer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveAnswer.swift; sourceTree = "<group>"; };
 		D1E859D227A5724900B8EB5D /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 		D1E859D327A5724900B8EB5D /* MainTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainTableViewCell.xib; sourceTree = "<group>"; };
 		D1E859D627A5728500B8EB5D /* MainTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewModel.swift; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 				D1B259A127933F8E00D4359A /* AppDelegate.swift */,
 				D1B259A327933F8E00D4359A /* SceneDelegate.swift */,
 				D1B259AC27933F9000D4359A /* LaunchScreen.storyboard */,
+				D1C0812F27C11B4B0000FC54 /* SaveAnswer.swift */,
 				D1B259AA27933F9000D4359A /* Assets.xcassets */,
 			);
 			path = Support;
@@ -185,6 +188,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D1B259B227933F9000D4359A /* Build configuration list for PBXNativeTarget "8-Ball Without Actual Ball" */;
 			buildPhases = (
+				D1C0813227C6E6300000FC54 /* ShellScript */,
+				D1C0813127C6E2E60000FC54 /* ShellScript */,
 				2C3239D889BEB1FF915B60ED /* [CP] Check Pods Manifest.lock */,
 				D1B2599A27933F8E00D4359A /* Sources */,
 				D1B2599B27933F8E00D4359A /* Frameworks */,
@@ -271,6 +276,40 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		D1C0813127C6E2E60000FC54 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 12;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "${PODS_ROOT}/SwiftLint/swiftlint\n";
+		};
+		D1C0813227C6E6300000FC54 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [[ -f \"${PODS_ROOT}/SwiftGen/bin/swiftgen\" ]]; then\n  \"${PODS_ROOT}/SwiftGen/bin/swiftgen\" …\nelse\n  echo \"warning: SwiftGen is not installed. Run 'pod install --repo-update' to install it.\"\nfi\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -286,6 +325,7 @@
 				D1E859E727A81A8E00B8EB5D /* SettingsTableViewCell.swift in Sources */,
 				D1B259A427933F8E00D4359A /* SceneDelegate.swift in Sources */,
 				D1B259CC2793513700D4359A /* TabBarVC.swift in Sources */,
+				D1C0813027C11B4B0000FC54 /* SaveAnswer.swift in Sources */,
 				D1B259BF2793458E00D4359A /* MainModel.swift in Sources */,
 				86DF7DCE27A49240008DC47F /* ModelAnswerOnQuestion.swift in Sources */,
 				D1B259BD2793457D00D4359A /* MainPresenter.swift in Sources */,
@@ -448,7 +488,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -476,7 +516,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

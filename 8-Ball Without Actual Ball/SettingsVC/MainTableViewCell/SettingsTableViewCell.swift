@@ -1,12 +1,10 @@
 import UIKit
 
-class SettingsTableViewCell: UITableViewCell {
+final class SettingsTableViewCell: UITableViewCell {
     @IBOutlet private var textAnswer: UITextField!
     
     private var structure: SettingsTableViewCellModel?
-    var saveAnswer: [String] {
-        return UserDefaults.standard.object(forKey:"savedAnswer") as? [String] ?? [String]()
-    }
+    private var block: ((Int, String) -> Void)?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -14,17 +12,16 @@ class SettingsTableViewCell: UITableViewCell {
         setup()
     }
     
-    func render(structure: SettingsTableViewCellModel) {
+    public func render(structure: SettingsTableViewCellModel, block: @escaping ((Int, String) -> Void)) {
         self.structure = structure
+        self.block = block
         textAnswer.text = structure.text
     }
     
-    @IBAction func textChanged(_ sender: UITextField) {
-        if let structure = structure {
-            var currentAnswer = saveAnswer
-            currentAnswer[structure.id] = sender.text ?? "Defolt"
-            UserDefaults.standard.set(currentAnswer, forKey: "savedAnswer")
-        }
+    @IBAction private func textChanged(_ sender: UITextField) {
+        guard let block = block, let structure = structure else { return }
+        
+        block(structure.id, sender.text ?? "defolt")
     }
     
     func setup() {
